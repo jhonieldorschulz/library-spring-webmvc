@@ -48,4 +48,10 @@ public class LivroController {
         livroService.deletar(id);
         return "redirect:/livros/listar";
     }
+    @PostMapping("/atualizar")
+    public String atualizarLivro(@ModelAttribute Livro livro) {
+        livroService.salvar(livro);
+        return "redirect:/livros/listar";
+    }
+
 }
