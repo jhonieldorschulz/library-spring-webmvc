@@ -15,6 +15,16 @@ public class Livro {
     private String isbn;
     private String editora;
 
+    public Livro() {
+    }
+
+    public Livro(String titulo, String autor, Integer anoPublicacao, String isbn, String editora) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anoPublicacao = anoPublicacao;
+        this.isbn = isbn;
+        this.editora = editora;
+    }
 
     public String getEditora() {
         return editora;
