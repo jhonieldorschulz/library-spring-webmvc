@@ -11,11 +11,22 @@ import java.util.List;
 public class UsuarioService {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private static UsuarioRepository usuarioRepository;
 
 
-    public List<Usuario> listarTodos(){
+
+    public static List<Usuario> listarTodos(){
        return usuarioRepository.findAll();
     }
 
+    public static Object buscarPorId(Long id) {
+        return usuarioRepository.findById(id).orElse(null);
+    }
+
+    public static Usuario salvar(Usuario usuario) {
+        return null;
+    }
+
+    public static void deletar(Long id) {
+    }
 }

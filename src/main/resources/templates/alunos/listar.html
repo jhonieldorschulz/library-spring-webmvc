@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-green-600 mb-8">Alunos</h1>
+    <table class="w-full bg-white shadow-md rounded-lg">
+        <thead>
+        <tr>
+            <th class="py-2 px-4 bg-green-500 text-white">Nome</th>
+            <th class="py-2 px-4 bg-green-500 text-white">Curso</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="aluno : ${alunos}">
+            <td class="py-2 px-4 border-b" th:text="${aluno.nome}"></td>
+            <td class="py-2 px-4 border-b" th:text="${aluno.curso}"></td>
+            <td class="py-2 px-4 border-b">
+                <a th:href="@{/alunos/editar/{id}(id=${aluno.id})}" class="text-blue-500 hover:underline">Editar</a>
+                <a th:href="@{/alunos/deletar/{id}(id=${aluno.id})}" class="text-red-500 hover:underline ml-2">Deletar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="./novo" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">Adicionar Aluno</a>
+</div>
+</body>
+</html>
